@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<style>
+    *{
+        font-family: "Century Gothic", sans-serif;
+        list-style: none;
+    }
+
+    body {
+        background: #f4f5ff;
+
+    }
+
+    nav {
+        background-color: #f4f5ff;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        overflow: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    ul li {
+        position: relative;
+        margin: 0 20px;
+        list-style: none;
+        display: inline-block;
+        padding: 14px;
+        font-size: 17px;
+    }
+
+    nav a {
+        color: #2f1c6a;
+        font-size: 18px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        padding: 7px 10px;
+        border-radius: 3px;
+    }
+
+    nav a:hover{
+        color:#2f1c6a;
+        text-decoration: none;
+        border-bottom: 2px solid #2f1c6a;
+    }
+
+    .description{
+        background-color: #f4f5ff;
+        font-size: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        max-width: 900px;
+        padding: 50px;
+        text-align: center;
+        color:#2f1c6a;
+    }
+
+    .aboutUs{
+        background-color: #f4f5ff;
+        font-size: 25px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        margin: 100px auto;
+        max-width: 600px;
+        padding: 50px;
+        text-align: center;
+        color: #2f1c6a;
+    }
+
+    a{
+        margin-right: 3px;
+        text-decoration: none;
+        color: #2f1c6a;
+    }
+
+    a:hover{
+        margin-right: 3px;
+        text-decoration: underline;
+        color: #2f1c6a;
+    }
+
+    button{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: #2f1c6a;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #673de6;
+    }
+    </style>
+<h1>Registration Form</h1>
+
+
+<form th:action="@{/register}" th:object="${bar}" method="post">
+
+    <label>Product ID</label>
+    <input type="text" th:field="*{productId}" name="id" required/></br>
+    <label>Product Name</label>
+    <input type="text" th:field="*{productName}" name="productName" required/></br>
+    <label>Product stock</label>
+    <input type="text" th:field="*{stock}" name="stock" required/></br>
+    <label>Product sales</label>
+    <input type="text" th:field="*{sales}" name="sales" required/></br>
+    <label>Product price</label>
+    <input type="text" th:field="*{price}" name="price" required/></br>
+    <label>Product balance</label>
+    <input type="text" th:field="*{balance}" name="balance" required/></br>
+    <label>Product Amount</label>
+    <input type="text" th:field="*{amount}" name="amount" required/></br>
+    <button type="submit">Register</button>
+
+</form>
+
+
+</body>
+</html>
